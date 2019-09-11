@@ -85,8 +85,10 @@
       $('.modal').modal();
       $('ul.tabs').tabs();
     });
-    var done=false; //insert jinja variable here
-    if (done) {
+    var queryString = new URLSearchParams(location.search);
+    var done=queryString.get('done');
+    console.log(done);
+    if (done=='true') {
       document.getElementById('downloadBtn').classList.remove('hidden');
       document.getElementById('progressBar').classList.add('hidden');
     }
